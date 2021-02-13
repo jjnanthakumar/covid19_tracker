@@ -2,10 +2,9 @@ import { useState, useEffect } from 'react';
 import { NativeSelect, FormControl, InputLabel } from '@material-ui/core'
 import styles from './CountryPicker.module.css'
 import { fetchCountries, fetchStates } from "../../api";
-const Country = ({ handleCountryChange, handleStateChange }) => {
+const Country = ({ handleCountryChange, country, state, handleStateChange }) => {
     const [countries, setCountries] = useState([])
     const [states, setStates] = useState([])
-    const [check, setCheck] = useState(false)
     useEffect(() => {
         const fetchdata = async () => {
             setCountries(await fetchCountries())
@@ -17,8 +16,8 @@ const Country = ({ handleCountryChange, handleStateChange }) => {
         setStates(data)
     }
     const controller = (e) => {
+        setStates([])
         handleCountryChange(e.target.value);
-        setCheck(true);
         fetchdata(e.target.value);
     }
     return (
@@ -34,7 +33,7 @@ const Country = ({ handleCountryChange, handleStateChange }) => {
                     {countries.map((country, i) => <option key={i} value={country}>{country}</option>)}
                 </NativeSelect>
             </FormControl>
-            {check ? (<FormControl className={styles.formControl}>
+            {country.length != 0 ? (<FormControl className={styles.formControl}>
                 <InputLabel htmlFor="states">States</InputLabel>
                 <NativeSelect
                     inputProps={{

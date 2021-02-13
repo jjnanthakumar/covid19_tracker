@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { fetchDailyData } from '../../api';
 import { Line, Bar } from 'react-chartjs-2';
 import styles from './Chart.module.css';
-const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
+const Chart = ({ data: { confirmed, recovered, deaths }, country, state }) => {
     const [dailyData, setDailyData] = useState([]);
     useEffect(() => {
         const fetchAPI = async () => {
@@ -50,7 +50,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
                     }}
                     options={{
                         legend: { display: false },
-                        title: { display: true, text: `Current situation in ${country}` }
+                        title: { display: true, text: `Current situation in ${state || country}` }
                     }}
                 />
             ) : null
