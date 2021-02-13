@@ -1,0 +1,11 @@
+.formControl{
+    width: 100%;
+    margin-bottom: 30px !important;
+    margin-left: 10px !important;
+}
+.picker{
+    padding: 3px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px !important;
+}
