@@ -23,11 +23,7 @@ const Country = ({ handleCountryChange, country, state, handleStateChange }) => 
     return (
         <div className={styles.picker}>
             <FormControl className={styles.formControl}>
-                {/* <InputLabel htmlFor="country">Country</InputLabel> */}
                 <NativeSelect
-                    inputProps={{
-                        id: 'country'
-                    }}
                     defaultValue="" onChange={controller}>
                     <option value="">Global</option>
                     {countries.map((country, i) => <option key={i} value={country}>{country}</option>)}
