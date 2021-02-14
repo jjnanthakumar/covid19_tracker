@@ -21,13 +21,21 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country, state }) => {
                         borderColor: '#3333ff',
                         fill: true,
                     }, {
+                        data: dailyData.map(({ recovered }) => recovered),
+                        label: 'Recovered',
+                        borderColor: 'green',
+                        backgroundColor: 'rgba(0,255,0,0.5)',
+                        fill: true,
+                    },
+                    {
                         data: dailyData.map(({ deaths }) => deaths),
                         label: 'Deaths',
                         borderColor: 'red',
                         backgroundColor: 'rgba(255,0,0,0.5)',
                         fill: true,
 
-                    }],
+                    
+                ],
                 }}
             />) : null
 
