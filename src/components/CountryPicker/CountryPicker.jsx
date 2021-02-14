@@ -30,13 +30,9 @@ const Country = ({ handleCountryChange, country, state, handleStateChange }) => 
                 </NativeSelect>
             </FormControl>
             {country.length != 0 ? (<FormControl className={styles.formControl}>
-                <InputLabel htmlFor="states">States</InputLabel>
                 <NativeSelect
-                    inputProps={{
-                        id: 'states'
-                    }}
                     defaultValue="" onChange={(e) => handleStateChange(e.target.value)}>
-                    <option value=""></option>
+                    <option value="">{country}</option>
                     {states.map((state, i) => <option key={i} value={state}>{state}</option>)}
                 </NativeSelect>
             </FormControl>) : null}
