@@ -29,7 +29,7 @@ const Country = ({ handleCountryChange, country, state, handleStateChange }) => 
                         id: 'country'
                     }}
                     defaultValue="" onChange={controller}>
-                    <option value=""></option>
+                    <option value="">Global</option>
                     {countries.map((country, i) => <option key={i} value={country}>{country}</option>)}
                 </NativeSelect>
             </FormControl>
