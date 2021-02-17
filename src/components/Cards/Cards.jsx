@@ -2,27 +2,28 @@ import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 import CountUp from 'react-countup';
 import styles from './Cards.module.css';
 import cx from 'classnames';
+import moment from 'moment';
 const Cards = ({ confirmed, recovered, deaths, lastUpdate }) => {
     if (!confirmed) return 'Loading...'
     const obj = [
         {
             title: "Infected",
             value: confirmed.value || confirmed,
-            upd_date: new Date(lastUpdate).toLocaleString(),
+            upd_date: "Updated " + moment(new Date(lastUpdate).toLocaleString()).fromNow(),
             message: "Number of active cases from COVID-19.",
             style: 'infected'
         },
         {
             title: "Recovered",
             value: recovered.value || recovered,
-            upd_date: new Date(lastUpdate).toLocaleString(),
+            upd_date: "Updated " + moment(new Date(lastUpdate).toLocaleString()).fromNow(),
             message: "Number of recoveries from COVID-19.",
             style: 'recovered'
         },
         {
             title: "Deaths",
             value: deaths.value || deaths,
-            upd_date: new Date(lastUpdate).toLocaleString(),
+            upd_date: "Updated " + moment(new Date(lastUpdate).toLocaleString()).fromNow(),
             message: "Number of deaths caused by COVID-19.",
             style: 'deaths'
         }
