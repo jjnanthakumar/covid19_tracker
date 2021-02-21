@@ -9,21 +9,21 @@ const Cards = ({ confirmed, recovered, deaths, lastUpdate }) => {
         {
             title: "Infected",
             value: confirmed.value || confirmed,
-            upd_date: "Updated " + moment(new Date(lastUpdate).toLocaleString()).fromNow(),
+            upd_date: "Updated " + moment(new Date(lastUpdate).toJSON()).fromNow(),
             message: "Number of active cases from COVID-19.",
             style: 'infected'
         },
         {
             title: "Recovered",
             value: recovered.value || recovered,
-            upd_date: "Updated " + moment(new Date(lastUpdate).toLocaleString()).fromNow(),
+            upd_date: "Updated " + moment(new Date(lastUpdate).toJSON()).fromNow(),
             message: "Number of recoveries from COVID-19.",
             style: 'recovered'
         },
         {
             title: "Deaths",
             value: deaths.value || deaths,
-            upd_date: "Updated " + moment(new Date(lastUpdate).toLocaleString()).fromNow(),
+            upd_date: "Updated " + moment(new Date(lastUpdate).toJSON()).fromNow(),
             message: "Number of deaths caused by COVID-19.",
             style: 'deaths'
         }
