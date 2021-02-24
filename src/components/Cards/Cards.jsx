@@ -10,7 +10,7 @@ const Cards = ({ confirmed, recovered, deaths, lastUpdate }) => {
             title: "Infected",
             value: confirmed.value || confirmed,
             upd_date: "Updated " + moment(new Date(lastUpdate).toJSON()).fromNow(),
-            message: "Number of active cases from COVID-19.",
+            message: "Number of Infected cases from COVID-19.",
             style: 'infected'
         },
         {
